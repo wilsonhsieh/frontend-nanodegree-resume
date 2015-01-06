@@ -11,3 +11,16 @@ var formattedRole = HTMLheaderRole.replace("%data%", "Front End Web Developer");
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+
+var skills = ["CSS", "HTML", "JS", "Data Analysis", "leadership", "sales", "customer service"];
+
+var bio = {
+	"name" : "Wilson Hsieh",
+	"role" : "Front End Developer",
+	"contact" : "wilson199@yahoo.com",
+	"picture" : "www.facebook.com/wilson.hsieh",
+	"welcome" : "Welcome to my resume",
+	"skills" : skills
+};
+
+$("#main").append(bio.skills);
