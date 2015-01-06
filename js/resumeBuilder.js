@@ -7,7 +7,7 @@ console.log(funThoughts);
 */
 
 var formattedName = HTMLheaderName.replace("%data%", "Wilson Hsieh");
-$("#header").append(formattedName);
-
 var formattedRole = HTMLheaderRole.replace("%data%", "Front End Web Developer");
-$("#header").append(formattedRole);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
