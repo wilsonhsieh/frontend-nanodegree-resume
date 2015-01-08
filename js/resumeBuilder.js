@@ -23,4 +23,83 @@ var bio = {
 	"skills" : skills
 };
 
-$("#main").append(bio.skills);
+//$("#main").append(bio.skills);
+
+var work = {
+	"ngccAnalyst" : {
+		"position" : "NGCC Analyst",
+		"employer" : "Fidelity Investments",
+		"years" : "November 2014 - Current",
+		"city" : "Westlake",
+		"descriptionJob" : "Blah"
+	},
+	"opsAnalyst" : { 
+		"position" : "Operational Analyst",
+		"employer" : "Fidelity Investments",
+		"years" : "January 2014 - November 2014",
+		"city" : "Westlake",
+		"descriptionJob" : "Blah"
+	},
+	"financialRep" : {
+		"position" : "Financial Representative: High Opportunity",
+		"employer" : "Fidelity Investments",
+		"years" : "January 2013 - December 2013",
+		"city" : "Westlake",
+		"descriptionJob" : "Blah"
+	}
+};
+$("#workExperience").append(HTMLworkStart);
+
+for (job in work){
+	var employer = HTMLworkEmployer.replace("%data%", work[job].employer);
+	var title = HTMLworkTitle.replace("%data%", work[job].position);
+	var employerTitle = employer + title;
+	$(".work-entry").append(employerTitle);
+
+	var year = HTMLworkDates.replace("%data%", work[job].years);
+	$(".work-entry").append(year);
+	var description = HTMLworkDescription.replace("%data%", work[job].descriptionJob);
+	$(".work-entry").append(description);
+}
+
+
+var education = {
+	"school" : {
+		"name" : "Texas A&M University",
+		"city" : "College Station",
+		"major" : "B.S. in Nutritional Science",
+		"minor" : "Minor is Business",
+		"Graduation" : "2012",
+	},
+	"onlineCourse" : {
+		"name" : "Udacity",
+		"city" : "Online",
+		"major" : "Front End Web Developer Nanodegree",
+		"Graduation" : "2015",
+	}
+};
+
+var project = [{
+	"title" : "Into to HTML and CSS",
+	"date" : "November 2014",
+	"description" : "Code a mock up of a Udacity site with HTML and CSS",
+}];
+
+
+
+education["name"] = "Texas A&M University";
+education["years"] = "2007 - 2012";
+education["city"] = "College Station";
+
+$("#main").append(work["position"]);
+$("#main").append(education.name);
+
+if (bio.skills.length > 0){
+	$("#header").append(HTMLskillsStart);	
+	for(skill in bio.skills){
+		var skillList = HTMLskills.replace("%data%", bio.skills[skill]);
+		$("#skills").append(skillList);
+	}
+};
+
+
