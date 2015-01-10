@@ -17,7 +17,10 @@ var skills = ["CSS", "HTML", "JS", "Data Analysis", "leadership", "sales", "cust
 var bio = {
 	"name" : "Wilson Hsieh",
 	"role" : "Front End Developer",
-	"contact" : "wilson199@yahoo.com",
+	"contacts" : {
+		"email" : "wilson199@yahoo.com",
+		"location" : "Plano, Texas"
+	},
 	"picture" : "www.facebook.com/wilson.hsieh",
 	"welcome" : "Welcome to my resume",
 	"skills" : skills
@@ -30,21 +33,21 @@ var work = {
 		"position" : "NGCC Analyst",
 		"employer" : "Fidelity Investments",
 		"years" : "November 2014 - Current",
-		"city" : "Westlake",
+		"location" : "Westlake, Texas",
 		"descriptionJob" : "Blah"
 	},
 	"opsAnalyst" : { 
 		"position" : "Operational Analyst",
 		"employer" : "Fidelity Investments",
 		"years" : "January 2014 - November 2014",
-		"city" : "Westlake",
+		"location" : "Westlake, Texas",
 		"descriptionJob" : "Blah"
 	},
 	"financialRep" : {
 		"position" : "Financial Representative: High Opportunity",
 		"employer" : "Fidelity Investments",
 		"years" : "January 2013 - December 2013",
-		"city" : "Westlake",
+		"location" : "Westlake, Texas",
 		"descriptionJob" : "Blah"
 	}
 };
@@ -87,14 +90,14 @@ function inName (){
 var education = {
 	"school" : {
 		"name" : "Texas A&M University",
-		"city" : "College Station",
+		"location" : "College Station, Texas",
 		"major" : "B.S. in Nutritional Science",
 		"minor" : "Minor is Business",
 		"Graduation" : "2012",
 	},
 	"onlineCourse" : {
 		"name" : "Udacity",
-		"city" : "Online",
+		"location" : "Online",
 		"major" : "Front End Web Developer Nanodegree",
 		"Graduation" : "2015",
 	}
