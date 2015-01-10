@@ -48,18 +48,39 @@ var work = {
 		"descriptionJob" : "Blah"
 	}
 };
-$("#workExperience").append(HTMLworkStart);
 
-for (job in work){
-	var employer = HTMLworkEmployer.replace("%data%", work[job].employer);
-	var title = HTMLworkTitle.replace("%data%", work[job].position);
-	var employerTitle = employer + title;
-	$(".work-entry").append(employerTitle);
+function displayWork (){
 
-	var year = HTMLworkDates.replace("%data%", work[job].years);
-	$(".work-entry").append(year);
-	var description = HTMLworkDescription.replace("%data%", work[job].descriptionJob);
-	$(".work-entry").append(description);
+	$("#workExperience").append(HTMLworkStart);
+
+	for (job in work){
+		var employer = HTMLworkEmployer.replace("%data%", work[job].employer);
+		var title = HTMLworkTitle.replace("%data%", work[job].position);
+		var employerTitle = employer + title;
+		$(".work-entry").append(employerTitle);
+
+		var year = HTMLworkDates.replace("%data%", work[job].years);
+		$(".work-entry").append(year);
+		var description = HTMLworkDescription.replace("%data%", work[job].descriptionJob);
+		$(".work-entry").append(description);
+	}
+};
+
+displayWork ();
+
+$(document).click(function(loc){
+	var x = loc.pageX;
+	var y = loc.pageY;
+	logClicks(x,y);
+});
+
+$("#main").append(internationalizeButton);
+function inName (){
+	var oldName = $("#name").html() || "";
+	var name = oldName.trim().split(" ");
+	console.log(name);
+	return name[0].slice(0,1).toUpperCase()+
+		name[0].slice(1).toLowerCase()+ " " + name[1].toUpperCase();
 }
 
 
@@ -85,6 +106,19 @@ var project = [{
 	"description" : "Code a mock up of a Udacity site with HTML and CSS",
 }];
 
+project.display = function (){
+	for (i=0; i < project.length; i++){
+		$("#main").append(HTMLprojectStart);
+		var doc = HTMLprojectTitle.replace("%data%", project[i].title);
+		$("#main").append(doc);
+		var complete = HTMLprojectDates.replace("%data%", project[i].date);
+		$("#main").append(complete); 
+		var summary = HTMLprojectDescription.replace("%data%", project[i].description);
+		$("#main").append(summary); 
+	}
+}
+
+project.display();
 
 
 education["name"] = "Texas A&M University";
@@ -102,4 +136,5 @@ if (bio.skills.length > 0){
 	}
 };
 
+$("#mapDiv").append(googleMap);
 
